@@ -1,0 +1,67 @@
+header {
+    display: block;
+    justify-content: normal;
+    background-color: #F2B807;
+    border-radius: 10px;
+    max-width: 470px;
+    margin: 0 auto;
+    padding: 1px;
+    max-height: 56px;
+
+}
+
+header p{
+    text-align: center;
+}
+
+body {
+    background: #0e2342;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#conteudo_api p {
+    width: calc(100% - 16px);
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #CCC;
+    height: 25px;
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+    display: block;
+    background-color: white;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 440px;
+    background: #F2B807;
+    border-radius: 8px;
+    height: auto;
+    padding: 20px;
+    
+}
+
+.frm-row {
+    margin-bottom: 14px;
+}
+
+.frm-row label {
+    display: block;
+    margin-bottom: 3px;
+}
+
+.frm-row input {
+    width: calc(100% - 16px);
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #CCC;
+    height: 25px;
+    font-size: 1.2rem;
+}
+
+li {
+    margin-bottom: 11px;
+}
+

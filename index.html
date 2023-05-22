@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/estilos.css" rel="stylesheet">
+    <title>Busca CEP</title>
+</head>
+<body>
+  <header href='formulario.php'>
+    <a href='formulario.php'>
+      <p> Formulário de Usuário </p>
+    </a>
+  </header>
+
+    <div class="container">
+    <div class="frm-row">
+
+        Insira o CEP <input type="text" name="cep"> <br><br>
+
+        <button onclick="fazerconsulta()">
+          Consulta
+        </button>
+   
+        <p id='conteudo_api'>
+        
+    </div>
+</div>
+</body>
+
+<script>
+
+
+    function fazerconsulta() { //função que pega os dados e joga no fetch, utilizando os dados para jogar na API como indicadado. Se funcionasse...
+      let cep = document.querySelector('[name="cep"]').value;
+  
+      let conteudo = document.querySelector('#conteudo_api')
+  
+      fetch(`https://viacep.com.br/ws/${cep}/json/`)
+        .then((response) => response.json())
+        .then((data) => {
+  
+  
+          console.log(data)
+            let cep_rua = document.createElement('p');
+            let cep_bairro = document.createElement('p');
+            let cep_cidade = document.createElement('p');
+            let cep_estado = document.createElement('p');
+            cep_rua.innerHTML = `${data.logradouro}`;
+            cep_bairro.innerHTML = `Bairro ${data.bairro}`;
+            cep_cidade.innerHTML = `Cidade ${data.localidade}`;
+            cep_estado.innerHTML = `Estado ${data.uf}`;
+            
+            
+            conteudo.appendChild(cep_rua);
+            conteudo.appendChild(cep_bairro);
+            conteudo.appendChild(cep_cidade);
+            conteudo.appendChild(cep_estado);
+            
+          
+        })
+  
+    }
+  </script>
+
+</html>
